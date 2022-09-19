@@ -4,5 +4,6 @@ public class Java_Class {
 
         int number = 6;
         double number1 = 3.14;
+        System.out.println(number1+number);
     }
 }
