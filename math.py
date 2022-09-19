@@ -14,5 +14,9 @@ for i in function:
     elif i == "-":
         solution = (number1-number2)
 print(solution)
-ln = log(float(input("To solve a natural log, input the number here (type 1 for e and 0 for 1): ")))
+ln = log(float(input("To solve a natural log, input the number here (Enter a number above 0): ")))
 print(ln)
+print("Below you'll be able to solve for numbers to a power in the form x^y")
+x = float(input("Enter the base: "))
+y = float(input("Enter the power: "))
+print(x^y)
