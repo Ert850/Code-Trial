@@ -3,5 +3,6 @@ public class Java_Class {
         System.out.println("Hello World");
 
         int number = 6;
+        double number1 = 3.14;
     }
 }
