@@ -1,7 +1,4 @@
 from cmath import log, log10
-from curses import nl
-
-
 print("This is a program intended to complete simple math functions, like a calculator. It can complete addition, subtraction, multiplication, and division")
 number1 = float(input("Enter your first number: "))
 number2 = float(input("Enter your second number: "))
@@ -17,5 +14,5 @@ for i in function:
     elif i == "-":
         solution = (number1-number2)
 print(solution)
-ln = log10(float(input("To solve a natural log, input the number here (type 1 for e and 0 for 1): ")))
+ln = log(float(input("To solve a natural log, input the number here (type 1 for e and 0 for 1): ")))
 print(ln)
