@@ -1,4 +1,4 @@
-from cmath import cos, log, log10, sin, tan
+import math
 print("This is a program intended to complete simple math functions, like a calculator")
 print("It can complete addition, subtraction, multiplication, and division")
 print("In later sections it can do natural logs, numbers to a power, and basic trigonometry")
