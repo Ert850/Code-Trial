@@ -1,4 +1,4 @@
-# Activity Python 1: xxx
+# Activity Python: xxx
 # File: xxx_thackeer.py 
 # Date:    xx November 2022
 # By:      Elijah Thacker
