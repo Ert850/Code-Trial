@@ -14,38 +14,57 @@
 # development and execution.
 #
 # A BRIEF DESCRIPTION OF WHAT THE SCRIPT OR FUNCTION DOES
-# Take Pressure and Temperature inputs and output corresponding phase state of water, or errors of inputs
+# Takes Pressure and Temperature inputs and outputs corresponding phase state of water, or errors of inputs, and loops
 from cmath import log, exp
-P = input("Pressure (atm): ")
-T = input("Temperature (Celsius): ")
-try:
-    int(P or T) and int(P and T)
-    C = 0
-except ValueError:
+R = "Y"
+while R == "Y":
+    P = input("Pressure (atm): ")
+    T = input("Temperature (Celsius): ")
     try:
-        float(P or T) and float(P and T)
-        C = 0
+        int(P or T) and int(P and T) and float(P or T) and float(P and T)
+        C = "Y"
     except ValueError:
-        C = 1
-if C == 1:
-    print("Invalid Input - Not Number")
-else:
-    P = float(P)
-    T = float(T)
-    if P < 0:
-        print("Invalid Input - Negative Pressure")
-    else:
-        T = T + 273.15
-        P1 = abs(0.006*exp(6293*((1/273.15)-(1/T))-0.56*log(T/273.15)))
-        P2 = abs(0.006*exp(6808*((1/273.15)-(1/T))-5.09*log(T/273.15)))
-        if T > 647 and P > 218:
-            print("Super Critical Liquid")
-        elif T < 273.15:
-            if P > P1:
-                print("Solid")
+        print("Invalid Input - Not Number")
+        C = "N"
+    if C == "Y":
+        P = float(P)
+        T = float(T)+273.15
+        if P < 0:
+            print("Invalid Input - Negative Pressure")
+        else:
+            P1 = abs(0.006*exp(6293*((1/273.15)-(1/T))-0.56*log(T/273.15)))
+            P2 = abs(0.006*exp(6808*((1/273.15)-(1/T))-5.09*log(T/273.15)))
+            if T > 647 and P > 218:
+                print("Super Critical Liquid")
+            elif T < 273.15:
+                if P > P1:
+                    print("Solid")
+                else:
+                    print("Gas")
+            elif P > P2:
+                print("Liquid")
             else:
                 print("Gas")
-        elif P > P2:
-            print("Liquid")
-        else:
-            print("Gas")
+    R = input("Run again? (Y or N): ")
+    if R == "y":
+        R = "Y"
+    elif R == "Y":
+        R = "Y"
+    elif R == "n":
+        quit()
+    elif R == "N":
+        quit()
+    else:
+        R = 1
+        while R == 1:
+            R = input("Invalid Entry - Run again? (Y or N): ")
+            if R == "y":
+                R = "Y"
+            elif R == "Y":
+                R = "Y"
+            elif R == "n":
+                quit()
+            elif R == "N":
+                quit()
+            else:
+                R = 1
