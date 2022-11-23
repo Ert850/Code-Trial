@@ -46,25 +46,17 @@ while R == "Y":
             else:
                 print("Gas")
     R = input("Run again? (Y or N): ")
-    if R == "y":
-        R = "Y"
-    elif R == "Y":
-        R = "Y"
-    elif R == "n":
+    if R == "n" or R == "N":
         quit()
-    elif R == "N":
-        quit()
+    elif R == "Y" or R == "y":
+        R = "Y"
     else:
         R = 1
         while R == 1:
             R = input("Invalid Entry - Run again? (Y or N): ")
-            if R == "y":
-                R = "Y"
-            elif R == "Y":
-                R = "Y"
-            elif R == "n":
+            if R == "n" or R == "N":
                 quit()
-            elif R == "N":
-                quit()
+            elif R == "Y" or R == "y":
+                R = "Y"
             else:
                 R = 1

@@ -37,16 +37,16 @@ while R == "Y":
     if Check1 + Check2 == 2:
         if M == "Al":
             MM = 26.98
-            R = 0.1431
-            D = 2.7
+            R = 0.1431*(10**-7)
+            AD = 2.7
         elif M == "Co":
             MM = 58.93
-            R = 0.1253
-            D = 8.9
+            R = 0.1253*(10**-7)
+            AD = 8.9
         else:
             MM = 52
-            R = 0.1249
-            D = 7.2
+            R = 0.1249*(10**-7)
+            AD = 7.2
         if C == "FCC":
             A = (4*R)/(2**0.5)
             V = A**3
@@ -60,10 +60,15 @@ while R == "Y":
             C = 1.63*A
             V = (3*(3**0.5)*C*(A**0.5))/2
             NA = 6
-        print(A, C, V, NA)
-        
-        
-         
+        AC = 6.022*10**23
+        CD = (MM*NA)/V
+        MA = MM/AC
+        PD = 100*((abs(AD-CD))/AD)
+        print("The calculated density of ", M, "with ", C, "Crystal Structure is ", CD, "g/cm3")
+        if PD < 5:
+            print("The difference between the Actual Difference and the Calculated Difference is <= ", 5, "%, thus", C, "is the right crystal structure")
+        else:
+            print("The difference between the Actual Difference and the Calculated Difference is > ", 5, "%, thus", C, "is the right crystal structure")
     R = input("Run again? (Y or N): ")
     if R == "n" or R == "N":
         quit()
