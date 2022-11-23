@@ -58,13 +58,13 @@ while R == "Y":
         else:
             A = 2*R
             C = 1.63*A
-            V = (3*(3**0.5)*C*(A**0.5))/2
+            V = (3*(3**0.5)*C*(A**2))/2
             NA = 6
         AC = 6.022*10**23
-        CD = (MM*NA)/V
         MA = MM/AC
+        CD = (MA*NA)/V
         PD = 100*((abs(AD-CD))/AD)
-        print("The calculated density of ", M, "with ", C, "Crystal Structure is ", CD, "g/cm3")
+        print("The calculated density of ", M, "with ", C, "Crystal Structure is ", "{:0.2f}".format(CD), "g/cm3")
         if PD < 5:
             print("The difference between the Actual Difference and the Calculated Difference is <= ", 5, "%, thus", C, "is the right crystal structure")
         else:
