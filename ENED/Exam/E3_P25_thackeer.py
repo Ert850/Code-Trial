@@ -28,10 +28,10 @@ d = (q ** 2) + (4 * r)
 if d < 0:
     # If d is less than 0, the sequence oscilates
     print("Sequence Oscilates")
-    # If r has a distance from 0 greater than or equal 1, then the sequence will not converge to 0
-    if abs(r) >= 1:
-        print("Sequence Does Not Converge to Zero")
     # If r has a distance from 0 less than 1, then the sequence will converge to 0
+    if abs(r) < 1:
+        print("Sequence Converges to Zero")
+    # If r has a distance from 0 greater than or equal to 1, then the sequence will not converge to 0
     else:
         print("Sequence Converges to Zero")
 # Selects all remaining cases, where d is greater than or equal to 1
@@ -39,7 +39,7 @@ else:
     # If d is greater than or equal to 0, which it is in this case, the sequence does not oscilate
     print("Sequence Does Not Oscilate")
     # If q is not overcome by the sqrt of d in either scenario below to become greater than 1, then the sequence converges to 0
-    if abs((q - (d ** 0.5)) / 2) < 1 and abs((q + (d ** 0.5)) / 2) < 1:
+    if abs((q + (d ** 0.5)) / 2) < 1 and abs((q - (d ** 0.5)) / 2) < 1:
         print("Sequence Converges to Zero")
     # If q is overcome by the sqrt of d in either of the scnearios above to become greater than 1, then the sequence does not converge to 0
     else:
@@ -49,13 +49,13 @@ n = int(input("Y-Terms to Compute: "))
 # Repeats request until a postitive integer is given
 while n <= 0:
     n = int(input("Y-Terms to Compute (give a postitive integer): "))
-# Defines yn-1 as v1 and yn-2 as v2
-v1 = 2
-v2 = 1
+# Defines yn-1 (starts as y0) as yn1 and yn-2 as yn2
+yn1 = 5
+yn2 = 0
 # Repeats calculations specified count, and utilizes redefining to save values throughout the for loop, bumping values up to become the previous for each loop
 for k in range(n):
-    y = (q * v1) + (r * v2)
-    v2 = v1
-    v1 = y
+    y = (q * yn1) + (r * yn2)
+    yn2 = yn1
+    yn1 = y
 # Displays the final y-value
 print("Last y-value: ", "{0:.3f}".format(y))
