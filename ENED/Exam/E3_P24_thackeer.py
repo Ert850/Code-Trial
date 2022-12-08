@@ -18,34 +18,34 @@
 # and then proceed to enter points and recieve the equation for those points
 
 import math
-# Allows user to specify a model type 
+# Prompts the user for a model type
 type = input("Enter a Model Type ('L' for linear, 'P' for power, or 'E' for exponential): ")
-# Checks if the user imputted a valid value
+# Checks if the user entered a valid model type
 if type == 'L' or type == 'P' or type == 'E':
-    # Allows user to imput coordinates of two points, one at a time
+    # Prompts the user for the x and y coordinates of two data points
     x1 = float(input("Enter X1: "))
     y1 = float(input("Enter Y1: "))
     x2 = float(input("Enter X2: "))
     y2 = float(input("Enter X2: "))
-    # If the user specified the equation was linear, then the program calculates the slope and y-intercept for that model
+    # If linear, then the program computes the equation for linear
     if type == 'L':
         slope = (y2 - y1) / (x2 - x1)
         yint = y1 - (slope * x1)
         # Outputs linear equation
         print("Linear Equation: y =", "{0:.4f}".format(slope), "x +", "{0:.4f}".format(yint))
-    # If the user specified the equation was power, then the program calculates the slope and y-intercept for that model
+    # If power, then the program computes the equation for power
     elif type == 'P':
         slope = (math.log10(y2) - math.log(y1)) / (math.log10(x2) - math.log10(x1))
         yint = 10 ** (math.log10(y1) - (slope * math.log10(x1)))
         # Outputs power equation
-        print("Power Equation: y =", "{0:.4f}".format(slope), "x +", "{0:.4f}".format(yint))
-    # If the user specified the equation was exponential, then the program calculates the slope and y-intercept for that model
+        print("Power Equation: y =", "{0:.4f}".format(yint), "x^", "{0:.4f}".format(slope))
+    # If exponential, then the program computes the equation for exponential
     elif type == 'E':
         slope = (math.log(y2) - math.log(y1)) / (x2 - x1)
         yint = math.exp(math.log(y1) - (slope * x1))
         # Outputs exponential equation
-        print("Exponential Equation: y =", "{0:.4f}".format(slope), "x +", "{0:.4f}".format(yint))
-# Catch all in the case of error in inputted value
+        print("Exponential Equation: y =", "{0:.4f}".format(yint), "e^", "{0:.4f}".format(slope), "x")
+# Runs in the case of an invalid model type
 else:
-    # Informs the user that the value inputed for the model type was invalid
+    # Prints a message that the model type is invalid, and the program simply ends
     print("The Model Type is Invalid (try 'L', 'P', or 'E')")
