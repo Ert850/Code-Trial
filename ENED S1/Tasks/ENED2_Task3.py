@@ -16,9 +16,6 @@
 # A BRIEF DESCRIPTION OF WHAT THE SCRIPT OR FUNCTION DOES
 # Computes the equivalent spring constant and total displacement as well as the force 
 # and displacement for each spring for both parallel and series configurations
-from re import S
-
-
 K1 = float(input("Enter a K1 Value: "))
 K2 = float(input("Enter a K2 Value: "))
 FTotal = float(input("Enter a FTotal Value: "))
