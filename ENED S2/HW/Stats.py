@@ -15,4 +15,13 @@
 #
 # A BRIEF DESCRIPTION OF WHAT THE SCRIPT OR FUNCTION DOES
 # Statistics Function for test values
-num = input("Input a list of numerical values: ")
+def Stats(LStats):
+    AVal = 0
+    VVal = 0
+    for k in range(len(LStats)):
+        AVal = LStats[k] + AVal
+    Mean = AVal/(len(LStats))
+    for k in range(len(LStats)):
+        VVal = (LStats[k]-Mean**2+VVal)
+    SD = (VVal/(len(LStats)-1))**.5
+    return Mean, SD
