@@ -30,7 +30,7 @@ for k in range(len(Data)):
         ResultsFile.write('{0}\t{1}\t{2}\n'.format(Header[0],Header[6],'Pressure'))
     elif k != 0:
         Vals = Data[k].split()
-        Substance = float(Vals[0])
+        Substance = Vals[0]
         A = float(Vals[1])
         B = float(Vals[2])
         C = float(Vals[3])
@@ -39,7 +39,7 @@ for k in range(len(Data)):
         T = float(Vals[6])
         P = 10**(A-(B/(C+T)))
         if Tmax > T and T > Tmin:
-            ResultsFile.write('{0}\t{1}\t{2}\n'.format(Vals[0],Vals[6],P))
+            ResultsFile.write('{0}\t{1}\t{2}\n'.format(Substance,T,P))
         
 # Close files
 DataFile.close()
