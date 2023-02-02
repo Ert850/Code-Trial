@@ -1,4 +1,4 @@
-Substance	T	Pressure
+Substance      	T    	Pressure  
 carbon-dioxide 	-100.0	    104.69
 chloroform     	 45.0	    427.78
 formaldehyde   	-20.0	    730.70
