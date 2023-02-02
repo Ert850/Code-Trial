@@ -27,7 +27,7 @@ Data = DataFile.readlines()
 for k in range(len(Data)):
     if k == 0:
         Header = Data[k].split()
-        ResultsFile.write('{0:15}\t{1:5}\t{2:10}\n'.format(Header[0],Header[6],'Pressure'))
+        ResultsFile.write('{0:15}\t{1:10}\t{2:10}\n'.format(Header[0],Header[6],'Pressure'))
     elif k != 0:
         Vals = Data[k].split()
         Substance = Vals[0]
