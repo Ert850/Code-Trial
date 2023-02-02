@@ -1,6 +1,6 @@
-# Activity Python: Homework 3 Part 
-# File: xxx_thackeer.py 
-# Date:    xx January 2023
+# Activity Python: Homework 3 Part 2 Task 1
+# File: HW3p2_Task1_thackeer.py 
+# Date:    02 February 2023
 # By:      Elijah Thacker
 # Section: 006
 # Team:    063
@@ -14,7 +14,7 @@
 # development and execution.
 #
 # A BRIEF DESCRIPTION OF WHAT THE SCRIPT OR FUNCTION DOES
-# xxx
+# Calculates Pressure if Satisfies Condition in a list
 
 # Open files
 DataFile = open('Task1.txt','r')
@@ -27,7 +27,7 @@ Data = DataFile.readlines()
 for k in range(len(Data)):
     if k == 0:
         Header = Data[k].split()
-        ResultsFile.write('{0:15}\t{1:10}\t{2:10}\n'.format(Header[0],Header[6],'Pressure'))
+        ResultsFile.write('{0:16}\t{1:2}\t{2}\n'.format(Header[0],Header[6],'Pressure'))
     elif k != 0:
         Vals = Data[k].split()
         Substance = Vals[0]
@@ -39,9 +39,10 @@ for k in range(len(Data)):
         T = float(Vals[6])
         P = 10**(A-(B/(C+T)))
         if Tmax > T and T > Tmin:
-            ResultsFile.write('{0:15}\t{1:5}\t{2:10.2f}\n'.format(Substance,T,P))
+            ResultsFile.write('{0:15}\t{1:5.0f}\t{2:.2f}\n'.format(Substance,T,P))
         else:
-            ResultsFile.write('{0:15}\t{1:5}\t{2:10.2f}\n'.format(Substance,T,'-9999'))
+            ResultsFile.write('{0:15}\t{1:5.0f}\t{2}\n'.format(Substance,T,'-9999'))
+
 # Close files
 DataFile.close()
 ResultsFile.close()
