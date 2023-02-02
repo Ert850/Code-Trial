@@ -18,7 +18,7 @@
 
 # Open files
 DataFile = open('Task1.txt','r')
-ResultsFile = open('Pressure.txt','w')
+ResultsFile = open('Task1_Results.txt','w')
 
 #Read in the data
 Data = DataFile.readlines()
@@ -40,7 +40,8 @@ for k in range(len(Data)):
         P = 10**(A-(B/(C+T)))
         if Tmax > T and T > Tmin:
             ResultsFile.write('{0:15}\t{1:5}\t{2:10.2f}\n'.format(Substance,T,P))
-        
+        else:
+            ResultsFile.write('{0:15}\t{1:5}\t{2:10.2f}\n'.format(Substance,T,'-9999'))
 # Close files
 DataFile.close()
 ResultsFile.close()
