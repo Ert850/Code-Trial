@@ -37,7 +37,7 @@ for k in range(len(Data)):
     YAvg = YAvg + July
     d = d + 1
     if d == 31:
-        ResultsFile.write('{0:5}\t{1:5.1f}\t{2:.1f}\n'.format(Year,JAvg/31,YAvg/31))
+        ResultsFile.write('{0:5.0f}\t{1:5.1f}\t{2:.1f}\n'.format(Year,JAvg/31,YAvg/31))
         d = 1
         JAvg = 0
         YAvg = 0
