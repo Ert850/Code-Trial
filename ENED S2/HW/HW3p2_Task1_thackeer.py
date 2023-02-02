@@ -39,7 +39,7 @@ for k in range(len(Data)):
         T = float(Vals[6])
         P = 10**(A-(B/(C+T)))
         if Tmax > T and T > Tmin:
-            ResultsFile.write('{0:15}\t{1}\t{2}\n'.format(Substance,T,P))
+            ResultsFile.write('{0:15}\t{1:5}\t{2:10.2f}\n'.format(Substance,T,P))
         
 # Close files
 DataFile.close()
