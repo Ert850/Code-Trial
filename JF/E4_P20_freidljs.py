@@ -27,15 +27,17 @@ counterY = 0
 
 for k in range(len(data)):
     Vals = data[k].split()
-    if Vals[0] >= 19.125 and Vals[0] <= 19.5 and Vals[1] >= 58 and Vals[1] <= 59:
+    x = Vals[0]
+    y = Vals[1]
+    if x >= 19.125 and x <= 19.5 and y >= 58 and y <= 59:
        counterB = counterB+1 
     else:  
-        if Vals[0] >= 19.125 and Vals[0] <= 19.5:
+        if x >= 19.125 and x <= 19.5:
             counterX = counterX+1
-        if Vals[1] >= 58 and Vals[1] <= 59:
+        if y >= 58 and y <= 59:
             counterY = counterY+1
-    Xerror = Vals[0]-19.3125
-    Yerror = Vals[1]-59
+    Xerror = x-19.3125
+    Yerror = y-59
     Results.write('{0:.4f}\t{1:.4f}\n'.format(Xerror,Yerror))
 
 print('Both x and y in acceptable range: {0}\n'.format(counterB))
