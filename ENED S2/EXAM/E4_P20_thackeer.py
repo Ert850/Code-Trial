@@ -34,11 +34,11 @@ for k in range(len(Data)):
     xerror = x - 19.3125
     yerror = y - 59
     ResultsFile.write('{0:5.4f}\t{1:.4f}\n'.format(xerror,yerror))
-    if ((x < 19.5 or x == 19.5) or (x > 19.125 or x == 19.125)) and ((y < 59 or x == 59) or (y > 58 or y == 58)):
+    if x <= 19.5 and x >= 19.125 and y <= 59 and y >= 58:
         bc = bc + 1
-    elif ((x < 19.5 or x == 19.5) or (x > 19.125 or x == 19.125)):
+    elif x <= 19.5 and x >= 19.125:
         xc = xc + 1
-    elif ((y < 59 or x == 59) or (y > 58 or y == 58)):
+    elif y <= 59 and y >= 58:
         yc = yc + 1
 print("Count X: ",xc,"Count Y: ",yc, "Count Both: ",bc)
        

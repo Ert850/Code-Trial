@@ -19,18 +19,16 @@
 
 import math
 
-Vo = input(float('Enter the initial velocity (m/s): '))
-N = input(float('Enter the number of angles: '))
+Vo = int(input('Enter the initial velocity (m/s): '))
+N = int(input('Enter the number of angles: '))
 
 for k in range(N):
-    angleD = input(float('Enter the angle (in degrees): '))
-    while angleD <= 0:
-        angleD = input(float('Enter the angle (in degrees): '))
-    while angleD >= 90:
-        angleD = input(float('Enter the angle (in degrees): '))
+    angleD = int(input('Enter the angle (in degrees): '))
+    while angleD <= 0 or angleD >=90:
+        angleD = int(input('Enter the angle (in degrees): '))
     angleA = angleD*math.pi/180
     maxH = ((Vo**2)*(math.sin(angleA)**2))/19.62
-    maxR = (2(Vo**2)*math.cos(angleA)*math.sin(angleA))/19.62
+    maxR = (2(Vo**2)*(math.cos(angleA))*(math.sin(angleA)))/9.81
 
 print('Velocity: {0}\n'.format(Vo))
 print('Launch Angle: {0}\n'.format(angleD))

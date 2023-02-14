@@ -18,7 +18,7 @@
 import math
 def Rocket(Vo,N):
     angle = 180
-    while angle < 0 or angle > 90 or angle == 0 or angle == 90:
+    while angle >= 90 or angle <= 0:
         angle = input("Angle (degrees between ): ")
     height = (Vo^2 * math.sin(angle*math.pi/180))/2*9.81
     range = (2*(Vo^2)*math.cos(angle*math.pi/180)*math.sin(angle*math.pi/180))/9.81
