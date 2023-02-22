@@ -17,16 +17,16 @@
 # This script is a header template that will be used for 
 # all your python files the rest of the semester.
 
-RC = open('RC.txt','r')
-CFU = open('CFU3p2.txt','w')
+RC = open('RCj.txt','r')
+CFU = open('CFU3p2j.txt','w')
 
 rc = RC.readlines()
 maxtau = 0
 tau = []
 for k in range(len(rc)):
     Vals = rc[k].split()
-    r = (Vals[0])
-    c = (Vals[1])
+    r = float(Vals[0])
+    c = float(Vals[1])
     t = r*c
     tau.append[t]
     if tau[k] > maxtau:
